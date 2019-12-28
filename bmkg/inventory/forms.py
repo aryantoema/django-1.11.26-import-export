@@ -22,12 +22,21 @@ class TekananForm(forms.ModelForm):
 		fields = ('tanggal', 'jam0', 'jam1', 'jam2', 'jam3', 'jam4', 'jam5', 'jam6', 'jam7', 'jam8', 'jam9', 'jam10',
 			'jam11', 'jam12', 'jam13', 'jam14', 'jam15', 'jam16', 'jam17', 'jam18', 'jam19', 'jam20', 'jam21', 'jam22',
 			'jam23', )
+
+
+#class DateInput(forms.DateInput):
+#	input_type = 'date'
+
+#class ExampleForm(forms.Form):
+#	tanggal = forms.DateField(widget=DateInput)
+
 class AnginForm(forms.ModelForm):
 	class Meta:
 		model = Angin
 		fields = ('tanggal', 'jam0', 'jam1', 'jam2', 'jam3', 'jam4', 'jam5', 'jam6', 'jam7', 'jam8', 'jam9', 'jam10',
 			'jam11', 'jam12', 'jam13', 'jam14', 'jam15', 'jam16', 'jam17', 'jam18', 'jam19', 'jam20', 'jam21', 'jam22',
 			'jam23', )
+
 
 class RadiasiForm(forms.ModelForm):
 	class Meta:

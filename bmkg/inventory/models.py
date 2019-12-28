@@ -6,7 +6,7 @@ from django.db import models
 # Create your models here.
 
 class Kelembaban(models.Model):
-    tanggal = models.DateField(primary_key=True, auto_now=False, auto_now_add=False, blank=True)
+    tanggal = models.DateField("tanggal (yyy-mm-dd)", unique=True, auto_now=False, auto_now_add=False, blank=True)
     jam0 = models.IntegerField(default=0)
     jam1 = models.IntegerField(default=0)
     jam2 = models.IntegerField(default=0)
@@ -40,7 +40,7 @@ class Kelembaban(models.Model):
         return 'Tanggal: {0} Jam0: {1}'.format(self.tanggal, self.jam0)
 
 class Suhu(models.Model):
-    tanggal = models.DateField(primary_key=True, auto_now=False, auto_now_add=False, blank=True)
+    tanggal = models.DateField("tanggal (yyy-mm-dd)", unique=True, auto_now=False, auto_now_add=False, blank=True)
     jam0 = models.FloatField(default=0)
     jam1 = models.FloatField(default=0)
     jam2 = models.FloatField(default=0)
@@ -74,7 +74,7 @@ class Suhu(models.Model):
         return 'Tanggal: {0} Jam0: {1}'.format(self.tanggal, self.jam0)
 
 class Tekanan(models.Model):
-    tanggal = models.DateField(primary_key=True, auto_now=False, auto_now_add=False, blank=True)
+    tanggal = models.DateField("tanggal (yyy-mm-dd)", unique=True, auto_now=False, auto_now_add=False, blank=True)
     jam0 = models.FloatField(default=0)
     jam1 = models.FloatField(default=0)
     jam2 = models.FloatField(default=0)
@@ -108,7 +108,7 @@ class Tekanan(models.Model):
         return 'Tanggal: {0} Jam0: {1}'.format(self.tanggal, self.jam0)
 
 class Angin(models.Model):
-    tanggal = models.DateField(primary_key=True, auto_now=False, auto_now_add=False, blank=True)
+    tanggal = models.DateField("tanggal (yyy-mm-dd)", unique=True, auto_now=False, auto_now_add=False, blank=True)
     jam0 = models.CharField(max_length=6, blank=True, default=0)
     jam1 = models.CharField(max_length=6, blank=True, default=0)
     jam2 = models.CharField(max_length=6, blank=True, default=0)
@@ -142,7 +142,7 @@ class Angin(models.Model):
         return 'Tanggal: {0} Jam0: {1}'.format(self.tanggal, self.jam0)
 
 class Radiasi(models.Model):
-    tanggal = models.DateField(primary_key=True, auto_now=False, auto_now_add=False, blank=True)
+    tanggal = models.DateField("tanggal (yyy-mm-dd)", unique=True, auto_now=False, auto_now_add=False, blank=True)
     R_06_07 = models.CharField(max_length=4, blank=True, default=0)
     R_07_08 = models.CharField(max_length=4, blank=True, default=0)
     R_08_09 = models.CharField(max_length=4, blank=True, default=0)

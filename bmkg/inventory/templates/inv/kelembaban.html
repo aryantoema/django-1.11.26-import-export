@@ -1,0 +1,152 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>BMKG - management system</title>
+
+  <!-- Bootstrap -->
+  <link href="{%static '/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{%static '/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{%static '/css/animate.css' %}">
+  <link rel="stylesheet" href="{%static '/css/overwrite.css' %}">
+  <link href="{%static '/css/animate.min.css' %}" rel="stylesheet">
+  <link href="{%static '/css/style.css' %}" rel="stylesheet" />
+  <!-- =======================================================
+    Theme Name: Bikin
+    Theme URL: https://bootstrapmade.com/bikin-free-simple-landing-page-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  <header id="header">
+    <nav class="navbar navbar-fixed-top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+          <a class="navbar-brand" href="{% url 'index' %}">Maritim Tanjung Emas</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li><a href="#feature">Filter</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--/.container-->
+    </nav>
+    <!--/nav-->
+  </header>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="container">
+    <div>
+      <br>
+      <br>
+
+      <h2>Currently Viewing {{ header }}</h2>
+    </div>  
+
+
+    <table class="table table-hover">
+      <thead>      
+          <tr>
+<!--              <th>ID</th>  -->
+              <th>Tanggal</th>
+              <th>Jam0</th>
+              <th>Jam1</th>
+              <th>Jam2</th>
+              <th>Jam3</th>
+              <th>Jam4</th>
+              <th>Jam5</th>
+              <th>Jam6</th>
+              <th>Jam7</th>
+              <th>Jam8</th>
+              <th>Jam9</th>
+              <th>Jam10</th>
+              <th>Jam11</th>
+              <th>Jam12</th>
+              <th>Jam13</th>
+              <th>Jam14</th>
+              <th>Jam15</th>
+              <th>Jam16</th>
+              <th>Jam17</th>
+              <th>Jam18</th>
+              <th>Jam19</th>
+              <th>Jam20</th>
+              <th>Jam21</th>
+              <th>Jam22</th>
+              <th>Jam23</th>
+              <th></th>
+          </tr>
+      </thead>
+
+      <tbody>
+
+          {% for data in datas %}
+          <tr>
+ <!--             <td>{{ data.pk }} </td>  -->
+              <td>{{ data.tanggal }}</td>
+              <td>{{ data.jam0 }}</td>
+              <td>{{ data.jam1 }}</td>
+              <td>{{ data.jam2 }}</td>
+              <td>{{ data.jam3 }}</td>
+              <td>{{ data.jam4 }}</td>
+              <td>{{ data.jam5 }}</td>
+              <td>{{ data.jam6 }}</td>
+              <td>{{ data.jam7 }}</td>
+              <td>{{ data.jam8 }}</td>
+              <td>{{ data.jam9 }}</td>
+              <td>{{ data.jam10 }}</td>
+              <td>{{ data.jam11 }}</td>
+              <td>{{ data.jam12 }}</td>
+              <td>{{ data.jam13 }}</td>
+              <td>{{ data.jam14 }}</td>
+              <td>{{ data.jam15 }}</td>
+              <td>{{ data.jam16 }}</td>
+              <td>{{ data.jam17 }}</td>
+              <td>{{ data.jam18 }}</td>
+              <td>{{ data.jam19 }}</td>
+              <td>{{ data.jam20 }}</td>
+              <td>{{ data.jam21 }}</td>
+              <td>{{ data.jam22 }}</td>
+              <td>{{ data.jam23 }}</td>
+              
+              {% if header|lower == "kelembaban" %}
+              <td>
+                <a href="{% url 'edit_kelembaban' data.pk %}" class="btn btn-warning btn-xs" role="button" aria-pressed="true" > Edit</a>
+              </td>
+              <td>
+                <a href="{% url 'delete_kelembaban' data.pk%}" class="btn btn-danger btn-xs" role="button" aria-pressed="true" > Delete</a>
+              </td>
+
+              {% endif %}
+            </tr>
+            
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

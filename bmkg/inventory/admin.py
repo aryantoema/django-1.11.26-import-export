@@ -13,10 +13,20 @@ from .views import *
 
 # Register your models here.
 
-@admin.register(Kelembaban, Suhu, Tekanan, Angin, Radiasi)
+@admin.register(Kelembaban, Suhu, Tekanan, Angin)
 class ViewAdmin(ImportExportModelAdmin):
-#    exclude = ('tanggal',)
+    
     list_per_page = 31
     actions = (export_parameters, export_excels,)
+    search_fields = ['tanggal']
+    list_filter = ['tanggal']
+
+@admin.register(Radiasi)
+class ViewAdmin(ImportExportModelAdmin):
+    actions = (export_parameters, export_xlsx,)
+    list_per_page = 31
+    search_fields = ['tanggal']
+    list_filter = ['tanggal']
+
 
 ####################################################
